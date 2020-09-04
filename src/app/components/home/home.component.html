@@ -1,25 +1,25 @@
 <div class="container">
+
+  <!-- Battle Button -->
+  <div class="row mb-4">
+    <div class="col-md-6 mx-auto text-center">
+      <input (click)="refresh()" type="button" class="btn btn-light bg-light mx-2" value="Refresh">
+      <input (click)="battle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!">
+    </div>
+  </div>
+
+  <!-- Your Champions -->
+  <div class="row text-center mb-2" *ngIf="!battleStarted">
+    <div class="col-md-12 mx-auto rounded">
+      <h1>Your Champions</h1>
+    </div>
+  </div>
   <!-- Final Result -->
   <div class="row mb-4">
     <div class="col-md-6 mx-auto text-center">
       <span class="card text-white bg-success" *ngIf="finalResult==='win'">YOU WIN!</span>
       <span class="card text-white bg-secondary" *ngIf="finalResult==='draw'">DRAW</span>
       <span class="card text-white bg-danger" *ngIf="finalResult==='lose'">YOU LOSE</span>
-    </div>
-  </div>
-
-  <!-- Battle Button -->
-  <div class="row mb-4">
-    <div class="col-md-6 mx-auto text-center">
-      <input (click)="refresh()" type="button" class="btn btn-secondary mx-2" value="Refresh">
-      <input (click)="battle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!">
-    </div>
-  </div>
-
-  <!-- Your Champions -->
-  <div class="row text-center mb-2">
-    <div class="col-md-12 mx-auto rounded">
-      <h1>Your Champions</h1>
     </div>
   </div>
   <div class="row text-center mb-4">
@@ -100,7 +100,7 @@
   </div>
 
   <!-- Enemy Champions -->
-  <div class="row text-center mb-2">
+  <div class="row text-center mb-2" *ngIf="!battleStarted">
     <div class="col-md-12 mx-auto rounded">
       <h1>VS</h1>
     </div>
