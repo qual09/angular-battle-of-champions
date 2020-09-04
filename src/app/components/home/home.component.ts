@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Champion } from '../../models/champion';
 import { CHAMPIONS } from '../../constants/champions';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
