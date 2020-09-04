@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   // Return Champion's class from his name
-  setChampionClass(championName: string, team = '') {
+  setChampionAttributes(championName: string, team = '') {
     // Hero
     if (team === 'Hero' || team === '') {
       this.champions.forEach(champion => {
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
           this.championsList.forEach(championTemplate => {
             if (championTemplate.name === championName) {
               champion.class = championTemplate.class;
+              champion.image = championTemplate.image;
             }
           });
         }
@@ -45,11 +46,13 @@ export class HomeComponent implements OnInit {
           this.championsList.forEach(championTemplate => {
             if (championTemplate.name === championName) {
               champion.class = championTemplate.class;
+              champion.image = championTemplate.image;
             }
           });
         }
       });
     }
+
   }
 
   clearAllChampions() {
@@ -75,17 +78,17 @@ export class HomeComponent implements OnInit {
 
   randomizeHeroes() {
     this.champions.forEach(champion => {
-      let randomNumber = Math.floor(Math.random() * this.championsList.length);
+      let randomNumber = Math.floor(Math.random() * (this.championsList.length - 1)) + 1;
       champion.name = this.championsList[randomNumber].name;
-      this.setChampionClass(champion.name, 'Hero');
+      this.setChampionAttributes(champion.name, 'Hero');
     });
   }
 
-  randomizeEnemy() {
+  randomizeEnemies() {
     this.championsEnemy.forEach(champion => {
-      let randomNumber = Math.floor(Math.random() * this.championsList.length);
+      let randomNumber = Math.floor(Math.random() * (this.championsList.length - 1)) + 1;
       champion.name = this.championsList[randomNumber].name;
-      this.setChampionClass(champion.name, 'Enemy');
+      this.setChampionAttributes(champion.name, 'Enemy');
     });
   }
 
@@ -118,124 +121,36 @@ export class HomeComponent implements OnInit {
 
   // 1 v 1
   fight(firstClass: string, secondClass: string) {
-    let winner = '';
-
-    switch (firstClass) {
-      case 'Warrior':
-        switch (secondClass) {
-          case 'Warrior':
-            winner = 'Warrior';
-            break;
-          case 'Assassin':
-            winner = 'Warrior';
-            break;
-          case 'Mage':
-            winner = 'Mage';
-            break;
-          case 'Hunter':
-            winner = 'Hunter';
-            break;
-          case 'Monk':
-            winner = 'Warrior';
-            break;
-          default:
-            winner = 'Warrior';
-            break;
-        }
-        break;
-      case 'Assassin':
-        switch (secondClass) {
-          case 'Warrior':
-            winner = 'Warrior';
-            break;
-          case 'Assassin':
-            winner = 'Assassin';
-            break;
-          case 'Mage':
-            winner = 'Assassin';
-            break;
-          case 'Hunter':
-            winner = 'Hunter';
-            break;
-          case 'Monk':
-            winner = 'Assassin';
-            break;
-          default:
-            winner = 'Assassin';
-            break;
-        }
-        break;
-      case 'Mage':
-        switch (secondClass) {
-          case 'Warrior':
-            winner = 'Mage';
-            break;
-          case 'Assassin':
-            winner = 'Assassin';
-            break;
-          case 'Mage':
-            winner = 'Mage';
-            break;
-          case 'Hunter':
-            winner = 'Mage';
-            break;
-          case 'Monk':
-            winner = 'Monk';
-            break;
-          default:
-            winner = 'Mage';
-            break;
-        }
-        break;
-      case 'Hunter':
-        switch (secondClass) {
-          case 'Warrior':
-            winner = 'Hunter';
-            break;
-          case 'Assassin':
-            winner = 'Hunter';
-            break;
-          case 'Mage':
-            winner = 'Mage';
-            break;
-          case 'Hunter':
-            winner = 'Hunter';
-            break;
-          case 'Monk':
-            winner = 'Monk';
-            break;
-          default:
-            winner = 'Hunter';
-            break;
-        }
-        break;
-      case 'Monk':
-        switch (secondClass) {
-          case 'Warrior':
-            winner = 'Warrior';
-            break;
-          case 'Assassin':
-            winner = 'Assassin';
-            break;
-          case 'Mage':
-            winner = 'Monk';
-            break;
-          case 'Hunter':
-            winner = 'Monk';
-            break;
-          case 'Monk':
-            winner = 'Monk';
-            break;
-          default:
-            winner = 'Monk';
-            break;
-        }
-        break;
-      default:
-        // code block
-        break;
+    let winner: string = '';
+    if (firstClass === secondClass) {
+      winner = firstClass;
+    } else {
+      switch (firstClass) {
+        case 'Warrior':
+          if (secondClass === 'Assassin' || secondClass === 'Monk') winner = firstClass;
+          if (secondClass === 'Mage' || secondClass === 'Hunter') winner = secondClass;
+          break;
+        case 'Assassin':
+          if (secondClass === 'Mage' || secondClass === 'Monk') winner = firstClass;
+          if (secondClass === 'Warrior' || secondClass === 'Hunter') winner = secondClass;
+          break;
+        case 'Mage':
+          if (secondClass === 'Warrior' || secondClass === 'Hunter') winner = firstClass;
+          if (secondClass === 'Assassin' || secondClass === 'Monk') winner = secondClass;
+          break;
+        case 'Hunter':
+          if (secondClass === 'Warrior' || secondClass === 'Assassin') winner = firstClass;
+          if (secondClass === 'Mage' || secondClass === 'Monk') winner = secondClass;
+          break;
+        case 'Monk':
+          if (secondClass === 'Mage' || secondClass === 'Hunter') winner = firstClass;
+          if (secondClass === 'Warrior' || secondClass === 'Assassin') winner = secondClass;
+          break;
+        default:
+          winner = firstClass;
+          break;
+      }
     }
-
     return winner;
   }
 
@@ -244,7 +159,7 @@ export class HomeComponent implements OnInit {
     this.finalResult = '';
     this.clearResults();
     this.clearAllChampions();
-    this.randomizeEnemy();
+    this.randomizeEnemies();
     this.randomizeHeroes()
   }
 

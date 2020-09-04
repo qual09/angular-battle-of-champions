@@ -2,43 +2,67 @@ import { Champion } from '../models/champion';
 
 export const CHAMPIONS: Champion[] = [
   {
-    name: 'Morias',
-    class: 'Warrior',
+    name: '', class: '',
+    image: '',
   },
   {
-    name: 'Antorian',
-    class: 'Warrior',
+    name: 'Morias', class: 'Warrior',
+    image: 'https://wiki.guildwars2.com/images/thumb/5/56/Warrior_04_concept_art.png/350px-Warrior_04_concept_art.png',
   },
   {
-    name: 'Angela',
-    class: 'Mage',
+    name: 'Antorian', class: 'Warrior',
+    image: 'https://wiki.guildwars2.com/images/thumb/8/88/Guardian_04_concept_art.png/350px-Guardian_04_concept_art.png',
   },
   {
-    name: 'Eve',
-    class: 'Mage',
+    name: 'Talia', class: 'Warrior',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-guardian.724918d1.jpg',
   },
   {
-    name: 'Edward',
-    class: 'Assassin',
+    name: 'Angela', class: 'Mage',
+    image: 'https://wiki.guildwars2.com/images/thumb/5/5e/Elementalist_04_concept_art.png/250px-Elementalist_04_concept_art.png',
   },
   {
-    name: 'Lucy',
-    class: 'Assassin',
+    name: 'Eve', class: 'Mage',
+    image: 'https://wiki.guildwars2.com/images/thumb/4/41/Spec_image_Tempest.jpg/300px-Spec_image_Tempest.jpg',
   },
   {
-    name: 'Strife',
-    class: 'Hunter',
+    name: 'Eliza', class: 'Mage',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-mesmer.cd1df4d2.jpg',
   },
   {
-    name: 'Dexter',
-    class: 'Hunter',
+    name: 'Edward', class: 'Assassin',
+    image: 'https://wiki.guildwars2.com/images/3/35/Thief_04_concept_art.png',
   },
   {
-    name: 'Kame',
-    class: 'Monk',
+    name: 'Lucy', class: 'Assassin',
+    image: 'https://wiki.guildwars2.com/images/thumb/4/4a/Mesmer_04_concept_art.png/200px-Mesmer_04_concept_art.png',
   },
   {
-    name: 'Ongoku',
-    class: 'Monk',
+    name: 'Vincent', class: 'Assassin',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-thief.d47d6471.jpg',
+  },
+  {
+    name: 'Strife', class: 'Hunter',
+    image: 'https://wiki.guildwars2.com/images/thumb/f/f6/Spec_image_Renegade.jpg/375px-Spec_image_Renegade.jpg',
+  },
+  {
+    name: 'Daria', class: 'Hunter',
+    image: 'https://wiki.guildwars2.com/images/thumb/8/8c/Spec_image_Druid.jpg/350px-Spec_image_Druid.jpg',
+  },
+  {
+    name: 'Lucius', class: 'Hunter',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-ranger.a4619727.jpg',
+  },
+  {
+    name: 'Kame', class: 'Monk',
+    image: 'https://wiki.guildwars2.com/images/thumb/f/fa/Revenant_01_concept_art.jpg/350px-Revenant_01_concept_art.jpg',
+  },
+  {
+    name: 'Ongoku', class: 'Monk',
+    image: 'https://wiki.guildwars2.com/images/thumb/0/06/Spec_image_Herald.jpg/325px-Spec_image_Herald.jpg',
+  },
+  {
+    name: 'Nalia', class: 'Monk',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-elementalist.b8cbecb6.jpg',
   },
 ]

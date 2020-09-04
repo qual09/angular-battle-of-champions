@@ -4,14 +4,15 @@
   <div class="row mb-4">
     <div class="col-md-6 mx-auto text-center">
       <input (click)="refresh()" type="button" class="btn btn-light bg-light mx-2" value="Refresh">
-      <input (click)="battle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!">
+      <input (click)="battle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!"
+        [disabled]="battleStarted">
     </div>
   </div>
 
   <!-- Your Champions -->
   <div class="row text-center mb-2" *ngIf="!battleStarted">
     <div class="col-md-12 mx-auto rounded">
-      <h1>Your Champions</h1>
+      <h1>Select Your Champions</h1>
     </div>
   </div>
   <!-- Final Result -->
@@ -25,48 +26,43 @@
   <div class="row text-center mb-4">
     <!-- Champion 1 -->
     <div class="col-md-2 mx-auto">
-      <select name="hero1" [(ngModel)]="champions[0].name" (change)="setChampionClass(champions[0].name)"
+      <select name="hero1" [(ngModel)]="champions[0].name" (change)="setChampionAttributes(champions[0].name)"
         [disabled]="battleStarted">
-        <option value=""></option>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="champions[0].name"></div>
+      <div class="championImg" [style.background-image]="'url('+champions[0].image+')'"></div>
     </div>
     <!-- Champion 2 -->
     <div class="col-md-2 mx-auto">
-      <select name="hero2" [(ngModel)]="champions[1].name" (change)="setChampionClass(champions[1].name)"
+      <select name="hero2" [(ngModel)]="champions[1].name" (change)="setChampionAttributes(champions[1].name)"
         [disabled]="battleStarted">
-        <option value=""></option>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="champions[1].name"></div>
+      <div class="championImg" [style.background-image]="'url('+champions[1].image+')'"></div>
     </div>
     <!-- Champion 3 -->
     <div class="col-md-2 mx-auto">
-      <select name="hero2" [(ngModel)]="champions[2].name" (change)="setChampionClass(champions[2].name)"
+      <select name="hero2" [(ngModel)]="champions[2].name" (change)="setChampionAttributes(champions[2].name)"
         [disabled]="battleStarted">
-        <option value=""></option>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="champions[2].name"></div>
+      <div class="championImg" [style.background-image]="'url('+champions[2].image+')'"></div>
     </div>
     <!-- Champion 4 -->
     <div class="col-md-2 mx-auto">
-      <select name="hero4" [(ngModel)]="champions[3].name" (change)="setChampionClass(champions[3].name)"
+      <select name="hero4" [(ngModel)]="champions[3].name" (change)="setChampionAttributes(champions[3].name)"
         [disabled]="battleStarted">
-        <option value=""></option>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="champions[3].name"></div>
+      <div class="championImg" [style.background-image]="'url('+champions[3].image+')'"></div>
     </div>
     <!-- Champion 5 -->
     <div class="col-md-2 mx-auto">
-      <select name="hero5" [(ngModel)]="champions[4].name" (change)="setChampionClass(champions[4].name)"
+      <select name="hero5" [(ngModel)]="champions[4].name" (change)="setChampionAttributes(champions[4].name)"
         [disabled]="battleStarted">
-        <option value=""></option>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="champions[4].name"></div>
+      <div class="championImg" [style.background-image]="'url('+champions[4].image+')'"></div>
     </div>
   </div>
 
@@ -106,50 +102,45 @@
     </div>
   </div>
   <div class="row text-center mb-4">
-    <!-- Champion 1 -->
+    <!-- Enemy 1 -->
     <div class="col-md-2 mx-auto">
       <select name="hero1" [(ngModel)]="championsEnemy[0].name"
-        (change)="setChampionClass(championsEnemy[0].name, 'Enemy')" disabled>
-        <option value=""></option>
+        (change)="setChampionAttributes(championsEnemy[0].name, 'Enemy')" disabled>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="championsEnemy[0].name"></div>
+      <div class="championImg" [style.background-image]="'url('+championsEnemy[0].image+')'"></div>
     </div>
-    <!-- Champion 2 -->
+    <!-- Enemy 2 -->
     <div class="col-md-2 mx-auto">
       <select name="hero2" [(ngModel)]="championsEnemy[1].name"
-        (change)="setChampionClass(championsEnemy[1].name, 'Enemy')" disabled>
-        <option value=""></option>
+        (change)="setChampionAttributes(championsEnemy[1].name, 'Enemy')" disabled>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="championsEnemy[1].name"></div>
+      <div class="championImg" [style.background-image]="'url('+championsEnemy[1].image+')'"></div>
     </div>
-    <!-- Champion 3 -->
+    <!-- Enemy 3 -->
     <div class="col-md-2 mx-auto">
       <select name="hero2" [(ngModel)]="championsEnemy[2].name"
-        (change)="setChampionClass(championsEnemy[2].name, 'Enemy')" disabled>
-        <option value=""></option>
+        (change)="setChampionAttributes(championsEnemy[2].name, 'Enemy')" disabled>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="championsEnemy[2].name"></div>
+      <div class="championImg" [style.background-image]="'url('+championsEnemy[2].image+')'"></div>
     </div>
-    <!-- Champion 4 -->
+    <!-- Enemy 4 -->
     <div class="col-md-2 mx-auto">
       <select name="hero4" [(ngModel)]="championsEnemy[3].name"
-        (change)="setChampionClass(championsEnemy[3].name, 'Enemy')" disabled>
-        <option value=""></option>
+        (change)="setChampionAttributes(championsEnemy[3].name, 'Enemy')" disabled>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="championsEnemy[3].name"></div>
+      <div class="championImg" [style.background-image]="'url('+championsEnemy[3].image+')'"></div>
     </div>
-    <!-- Champion 5 -->
+    <!-- Enemy 5 -->
     <div class="col-md-2 mx-auto">
       <select name="hero5" [(ngModel)]="championsEnemy[4].name"
-        (change)="setChampionClass(championsEnemy[4].name, 'Enemy')" disabled>
-        <option value=""></option>
+        (change)="setChampionAttributes(championsEnemy[4].name, 'Enemy')" disabled>
         <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
       </select>
-      <div class="championImg" [ngClass]="championsEnemy[4].name"></div>
+      <div class="championImg" [style.background-image]="'url('+championsEnemy[4].image+')'"></div>
     </div>
   </div>
 
