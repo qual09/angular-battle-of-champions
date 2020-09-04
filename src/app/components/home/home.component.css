@@ -1,3 +1,11 @@
+select {
+  padding: 2px 0;
+  text-align: center;
+  text-align-last: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
 .championImg {
   background-repeat: no-repeat;
   background-position-x: center;
