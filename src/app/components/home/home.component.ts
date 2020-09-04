@@ -15,13 +15,17 @@ export class HomeComponent implements OnInit {
   championsEnemy: Champion[];
   battleStarted: boolean = false;
   battleResult: string[] = ['', '', '', '', ''];
+  finalResult: string = '';
 
   constructor() { }
 
   ngOnInit(): void {
     this.refresh();
+    // Sort Champions alphabetically
+    this.championsList.sort((a, b) => (a.name > b.name ? 1 : (a.name < b.name ? -1 : 0)));
   }
 
+  // Return Champion's class from his name
   setChampionClass(championName: string, team = '') {
     // Hero
     if (team === 'Hero' || team === '') {
@@ -85,15 +89,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  refresh() {
-    this.battleStarted = false;
-    this.clearResults();
-    this.clearAllChampions();
-    this.randomizeEnemy();
-    this.randomizeHeroes()
-  }
-
-  startBattle() {
+  // 5 v 5
+  battle() {
     this.battleStarted = true;
     this.champions.forEach((champion, index) => {
       if (champion.class === this.championsEnemy[index].class) {
@@ -107,8 +104,19 @@ export class HomeComponent implements OnInit {
         }
       }
     });
+
+    let win = 0;
+    let lose = 0;
+    this.battleResult.forEach(result => {
+      if (result === 'win') win++;
+      if (result === 'lose') lose++;
+    });
+    if (win > lose) this.finalResult = 'win';
+    if (win === lose) this.finalResult = 'draw';
+    if (win < lose) this.finalResult = 'lose';
   }
 
+  // 1 v 1
   fight(firstClass: string, secondClass: string) {
     let winner = '';
 
@@ -229,6 +237,15 @@ export class HomeComponent implements OnInit {
     }
 
     return winner;
+  }
+
+  refresh() {
+    this.battleStarted = false;
+    this.finalResult = '';
+    this.clearResults();
+    this.clearAllChampions();
+    this.randomizeEnemy();
+    this.randomizeHeroes()
   }
 
   log() {
