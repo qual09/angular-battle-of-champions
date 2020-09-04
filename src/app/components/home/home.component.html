@@ -1,7 +1,45 @@
 <div class="container">
+  <div class="row text-center mb-4">
+    <div class="col-md-12 mx-auto rounded">
+      <h1>Select Your Champions</h1>
+    </div>
+  </div>
+  <div class="row text-center mb-4">
+    <!-- Champions -->
+    <div class="col-md-2 mx-auto">
+      <select name="hero1" [(ngModel)]="champions[0].name" (change)="setClass(champions[0].name)">
+        <option value=""></option>
+        <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <select name="hero2" [(ngModel)]="champions[1].name" (change)="setClass(champions[1].name)">
+        <option value=""></option>
+        <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <select name="hero2" [(ngModel)]="champions[2].name" (change)="setClass(champions[2].name)">
+        <option value=""></option>
+        <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <select name="hero4" [(ngModel)]="champions[3].name" (change)="setClass(champions[3].name)">
+        <option value=""></option>
+        <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <select name="hero5" [(ngModel)]="champions[4].name" (change)="setClass(champions[4].name)">
+        <option value=""></option>
+        <option *ngFor="let champion of championsList" value="{{champion.name}}">{{champion.name}}</option>
+      </select>
+    </div>
+  </div>
   <div class="row">
-    <div class="col-md-12 mx-auto text-center bg-secondary rounded">
-      <h1>Home Screen</h1>
+    <div class="col-md-6 mx-auto text-center">
+      <input (click)="log()" type="button" class="btn btn-primary" value="Battle!">
     </div>
   </div>
 </div>
