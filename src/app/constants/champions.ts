@@ -22,7 +22,7 @@ export const CHAMPIONS: Champion[] = [
     class: 'Assassin',
   },
   {
-    name: 'Zazim',
+    name: 'Lucy',
     class: 'Assassin',
   },
   {

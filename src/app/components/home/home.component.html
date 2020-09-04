@@ -1,4 +1,11 @@
 <div class="container">
+  <!-- Battle Button -->
+  <div class="row mb-4">
+    <div class="col-md-6 mx-auto text-center">
+      <input (click)="refresh()" type="button" class="btn btn-secondary mx-2" value="Refresh">
+      <input (click)="startBattle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!">
+    </div>
+  </div>
 
   <!-- Your Champions -->
   <div class="row text-center mb-2">
@@ -48,16 +55,40 @@
       <div class="championImg" [ngClass]="champions[4].name"></div>
     </div>
   </div>
-  <div class="row mb-4">
-    <div class="col-md-6 mx-auto text-center">
-      <input (click)="log()" type="button" class="btn btn-primary" value="Battle!">
+
+  <!-- Battle Results -->
+  <div class="row text-center mb-4" *ngIf="battleStarted">
+    <div class="col-md-2 mx-auto">
+      <span class="card text-white bg-success" *ngIf="battleResult[0]==='win'">WIN</span>
+      <span class="card text-white bg-secondary" *ngIf="battleResult[0]==='draw'">DRAW</span>
+      <span class="card text-white bg-danger" *ngIf="battleResult[0]==='lose'">LOSE</span>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <span class="card text-white bg-success" *ngIf="battleResult[1]==='win'">WIN</span>
+      <span class="card text-white bg-secondary" *ngIf="battleResult[1]==='draw'">DRAW</span>
+      <span class="card text-white bg-danger" *ngIf="battleResult[1]==='lose'">LOSE</span>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <span class="card text-white bg-success" *ngIf="battleResult[2]==='win'">WIN</span>
+      <span class="card text-white bg-secondary" *ngIf="battleResult[2]==='draw'">DRAW</span>
+      <span class="card text-white bg-danger" *ngIf="battleResult[2]==='lose'">LOSE</span>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <span class="card text-white bg-success" *ngIf="battleResult[3]==='win'">WIN</span>
+      <span class="card text-white bg-secondary" *ngIf="battleResult[3]==='draw'">DRAW</span>
+      <span class="card text-white bg-danger" *ngIf="battleResult[3]==='lose'">LOSE</span>
+    </div>
+    <div class="col-md-2 mx-auto">
+      <span class="card text-white bg-success" *ngIf="battleResult[4]==='win'">WIN</span>
+      <span class="card text-white bg-secondary" *ngIf="battleResult[4]==='draw'">DRAW</span>
+      <span class="card text-white bg-danger" *ngIf="battleResult[4]==='lose'">LOSE</span>
     </div>
   </div>
 
   <!-- Enemy Champions -->
   <div class="row text-center mb-2">
     <div class="col-md-12 mx-auto rounded">
-      <h1>Enemy Champions</h1>
+      <h1>VS</h1>
     </div>
   </div>
   <div class="row text-center mb-4">
