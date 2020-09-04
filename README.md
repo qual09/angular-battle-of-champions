@@ -1,2 +1,2 @@
 # angular-battle-of-champions
-Angular Game
+Angular Fantasy Game
