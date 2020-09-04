@@ -11,7 +11,7 @@ export const CHAMPIONS: Champion[] = [
   },
   {
     name: 'Antorian', class: 'Warrior',
-    image: 'https://wiki.guildwars2.com/images/thumb/8/88/Guardian_04_concept_art.png/350px-Guardian_04_concept_art.png',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-warrior.5d5b2e2f.jpg',
   },
   {
     name: 'Talia', class: 'Warrior',
@@ -46,8 +46,8 @@ export const CHAMPIONS: Champion[] = [
     image: 'https://wiki.guildwars2.com/images/thumb/f/f6/Spec_image_Renegade.jpg/375px-Spec_image_Renegade.jpg',
   },
   {
-    name: 'Daria', class: 'Hunter',
-    image: 'https://wiki.guildwars2.com/images/thumb/8/8c/Spec_image_Druid.jpg/350px-Spec_image_Druid.jpg',
+    name: 'Korin', class: 'Hunter',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-engineer.b8584b8.jpg',
   },
   {
     name: 'Lucius', class: 'Hunter',
@@ -55,11 +55,11 @@ export const CHAMPIONS: Champion[] = [
   },
   {
     name: 'Kame', class: 'Monk',
-    image: 'https://wiki.guildwars2.com/images/thumb/f/fa/Revenant_01_concept_art.jpg/350px-Revenant_01_concept_art.jpg',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-necromancer.1df803ee.jpg',
   },
   {
     name: 'Ongoku', class: 'Monk',
-    image: 'https://wiki.guildwars2.com/images/thumb/0/06/Spec_image_Herald.jpg/325px-Spec_image_Herald.jpg',
+    image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-revenant.44224fb9.png',
   },
   {
     name: 'Nalia', class: 'Monk',
