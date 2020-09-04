@@ -1,0 +1,48 @@
+.Morias {
+  background: url(https://wiki.guildwars2.com/images/thumb/5/56/Warrior_04_concept_art.png/350px-Warrior_04_concept_art.png);
+}
+
+.Antorian {
+  background: url(https://wiki.guildwars2.com/images/thumb/8/88/Guardian_04_concept_art.png/350px-Guardian_04_concept_art.png);
+}
+
+.Angela {
+  background: url(https://wiki.guildwars2.com/images/thumb/5/5e/Elementalist_04_concept_art.png/250px-Elementalist_04_concept_art.png);
+}
+
+.Eve {
+  background: url(https://wiki.guildwars2.com/images/thumb/4/41/Spec_image_Tempest.jpg/300px-Spec_image_Tempest.jpg);
+}
+
+.Edward {
+  background: url(https://wiki.guildwars2.com/images/3/35/Thief_04_concept_art.png);
+}
+
+.Zazim {
+  background: url(https://wiki.guildwars2.com/images/thumb/4/4a/Mesmer_04_concept_art.png/200px-Mesmer_04_concept_art.png);
+}
+
+.Strife {
+  background: url(https://wiki.guildwars2.com/images/thumb/f/f6/Spec_image_Renegade.jpg/375px-Spec_image_Renegade.jpg);
+}
+
+.Dexter {
+  background: url(https://wiki.guildwars2.com/images/thumb/8/8c/Spec_image_Druid.jpg/350px-Spec_image_Druid.jpg);
+}
+
+.Kame {
+  background: url(https://wiki.guildwars2.com/images/thumb/f/fa/Revenant_01_concept_art.jpg/350px-Revenant_01_concept_art.jpg);
+}
+
+.Ongoku {
+  background: url(https://wiki.guildwars2.com/images/thumb/0/06/Spec_image_Herald.jpg/325px-Spec_image_Herald.jpg);
+}
+
+.championImg {
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size: contain;
+  height: 200px;
+  margin-top: 5px;
+  width: auto;
+}

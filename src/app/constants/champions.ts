@@ -6,11 +6,23 @@ export const CHAMPIONS: Champion[] = [
     class: 'Warrior',
   },
   {
+    name: 'Antorian',
+    class: 'Warrior',
+  },
+  {
     name: 'Angela',
     class: 'Mage',
   },
   {
-    name: 'Eliza',
+    name: 'Eve',
+    class: 'Mage',
+  },
+  {
+    name: 'Edward',
+    class: 'Assassin',
+  },
+  {
+    name: 'Zazim',
     class: 'Assassin',
   },
   {
@@ -18,7 +30,15 @@ export const CHAMPIONS: Champion[] = [
     class: 'Hunter',
   },
   {
+    name: 'Dexter',
+    class: 'Hunter',
+  },
+  {
     name: 'Kame',
+    class: 'Monk',
+  },
+  {
+    name: 'Ongoku',
     class: 'Monk',
   },
 ]
