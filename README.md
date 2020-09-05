@@ -71,7 +71,7 @@
         </li>
       </ul>
       <span style="text-align: center;">
-        <img src="src/assets/info.png" style="display: block;margin-left: auto;  margin-right: auto;  width: 50%;" alt="">
+        <img src="src/assets/info.png" style="display: block;margin-left: auto; margin-right: auto; width: 50%;" alt="">
       </span>
     </div>
   </div>
