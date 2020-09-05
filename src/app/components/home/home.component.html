@@ -3,6 +3,12 @@
   <!-- Battle Button -->
   <div class="row mb-4">
     <div class="col-md-6 mx-auto text-center">
+
+      <!-- Score -->
+      <h1 class="mb-4" *ngIf="wins > 0 || loses > 0">
+        <span class="text-success">{{wins}}</span> : <span class="text-danger">{{loses}}</span>
+      </h1>
+
       <input (click)="refresh()" type="button" class="btn btn-light bg-light mx-2" value="Refresh">
       <input (click)="battle(); log()" type="button" class="btn btn-primary mx-2" value="Battle!"
         [disabled]="battleStarted">
@@ -12,7 +18,7 @@
   <!-- Your Champions Title -->
   <div class="row text-center mb-2" *ngIf="!battleStarted">
     <div class="col-md-12 mx-auto rounded">
-      <h1>Select Your Champions</h1>
+      <h2>Select Your Champions</h2>
     </div>
   </div>
 
@@ -100,7 +106,7 @@
   <!-- VS Title -->
   <div class="row text-center mb-3" *ngIf="!battleStarted">
     <div class="col-md-12 mx-auto rounded">
-      <h1>VS</h1>
+      <h2>VS</h2>
     </div>
   </div>
 

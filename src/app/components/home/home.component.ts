@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
   battleResult: string[] = ['', '', '', '', ''];
   finalResult: string = '';
 
+  wins: number = 0;
+  loses: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -113,9 +116,9 @@ export class HomeComponent implements OnInit {
       if (result === 'win') win++;
       if (result === 'lose') lose++;
     });
-    if (win > lose) this.finalResult = 'win';
-    if (win === lose) this.finalResult = 'draw';
-    if (win < lose) this.finalResult = 'lose';
+    if (win > lose) { this.finalResult = 'win'; this.wins++ }
+    if (win === lose) { this.finalResult = 'draw'; }
+    if (win < lose) { this.finalResult = 'lose'; this.loses++ }
   }
 
   // 1 v 1
