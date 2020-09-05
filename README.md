@@ -1,3 +1,9 @@
+
+<h1>
+<a href="https://qual09.github.io/portfolio/angular-battle-of-champions/" target="_blank" rel="noopener noreferrer">
+  Battle of Champions</a>
+</h1>
+
 <div class="container">
   <div class="row">
     <div class="col-md-7 mx-auto bg-light rounded border">
