@@ -130,20 +130,20 @@ export class HomeComponent implements OnInit {
           if (secondClass === 'Mage' || secondClass === 'Hunter') winner = secondClass;
           break;
         case 'Assassin':
-          if (secondClass === 'Mage' || secondClass === 'Monk') winner = firstClass;
-          if (secondClass === 'Warrior' || secondClass === 'Hunter') winner = secondClass;
+          if (secondClass === 'Mage' || secondClass === 'Hunter') winner = firstClass;
+          if (secondClass === 'Warrior' || secondClass === 'Monk') winner = secondClass;
           break;
         case 'Mage':
           if (secondClass === 'Warrior' || secondClass === 'Hunter') winner = firstClass;
           if (secondClass === 'Assassin' || secondClass === 'Monk') winner = secondClass;
           break;
         case 'Hunter':
-          if (secondClass === 'Warrior' || secondClass === 'Assassin') winner = firstClass;
-          if (secondClass === 'Mage' || secondClass === 'Monk') winner = secondClass;
+          if (secondClass === 'Warrior' || secondClass === 'Monk') winner = firstClass;
+          if (secondClass === 'Mage' || secondClass === 'Assassin') winner = secondClass;
           break;
         case 'Monk':
-          if (secondClass === 'Mage' || secondClass === 'Hunter') winner = firstClass;
-          if (secondClass === 'Warrior' || secondClass === 'Assassin') winner = secondClass;
+          if (secondClass === 'Mage' || secondClass === 'Assassin') winner = firstClass;
+          if (secondClass === 'Warrior' || secondClass === 'Hunter') winner = secondClass;
           break;
         default:
           winner = firstClass;

@@ -50,7 +50,7 @@ export const CHAMPIONS: Champion[] = [
     image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-engineer.b8584b8.jpg',
   },
   {
-    name: 'Lucius', class: 'Hunter',
+    name: 'Stark', class: 'Hunter',
     image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-ranger.a4619727.jpg',
   },
   {
@@ -58,7 +58,7 @@ export const CHAMPIONS: Champion[] = [
     image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-necromancer.1df803ee.jpg',
   },
   {
-    name: 'Ongoku', class: 'Monk',
+    name: 'Rengoku', class: 'Monk',
     image: 'https://guildwars2.staticwars.com/wp-content/themes/guildwars2.com-live/img/professions/list-revenant.44224fb9.png',
   },
   {
