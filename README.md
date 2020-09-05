@@ -70,7 +70,9 @@
           In melee he is a better fighter than an Assassin but not as good as a Warrior.
         </li>
       </ul>
-      <img src="src/assets/info.png" style="width:100%; height: auto;" alt="">
+      <span style="text-align: center;">
+        <img src="src/assets/info.png" style="display: block;margin-left: auto;  margin-right: auto;  width: 50%;" alt="">
+      </span>
     </div>
   </div>
 </div>
