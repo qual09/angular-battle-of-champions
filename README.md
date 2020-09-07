@@ -7,7 +7,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-7 mx-auto bg-light rounded border">
-      <h1>How to play</h1>
       <p>The rule of the game is simple. You select 5 champions and then each champion fights against another random
         selected champion. If most of your champions win, you win. </p>
       <p>
