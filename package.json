@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --o",
-    "build": "ng build --prod --base-href /portfolio/angular-battle-of-champions/",
+    "build": "ng build --prod --base-href /portfolio/angular-battle-of-champions/ --output-hashing none",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
