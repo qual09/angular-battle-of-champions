@@ -96,29 +96,40 @@ export class HomeComponent implements OnInit {
 
   // 5 v 5
   battle() {
-    this.battleStarted = true;
-    this.champions.forEach((champion, index) => {
-      if (champion.class === this.championsEnemy[index].class) {
-        this.battleResult[index] = 'draw';
-      } else {
-        let winner = this.fight(champion.class, this.championsEnemy[index].class);
-        if (champion.class === winner) {
-          this.battleResult[index] = 'win';
-        } else {
-          this.battleResult[index] = 'lose';
-        }
+    let emptyChampion: boolean = false;
+    // Check if all champions are selected
+    this.champions.forEach(champion => {
+      if (!champion.name || !champion.class) {
+        emptyChampion = true;
       }
     });
-
-    let win = 0;
-    let lose = 0;
-    this.battleResult.forEach(result => {
-      if (result === 'win') win++;
-      if (result === 'lose') lose++;
-    });
-    if (win > lose) { this.finalResult = 'win'; this.wins++ }
-    if (win === lose) { this.finalResult = 'draw'; }
-    if (win < lose) { this.finalResult = 'lose'; this.loses++ }
+    if (emptyChampion) {
+      alert('Please select all champions.');
+    } else {
+      this.battleStarted = true;
+      this.champions.forEach((champion, index) => {
+        if (champion.class === this.championsEnemy[index].class) {
+          this.battleResult[index] = 'draw';
+        } else {
+          let winner = this.fight(champion.class, this.championsEnemy[index].class);
+          if (champion.class === winner) {
+            this.battleResult[index] = 'win';
+          } else {
+            this.battleResult[index] = 'lose';
+          }
+        }
+      });
+      // Update final result
+      let win = 0;
+      let lose = 0;
+      this.battleResult.forEach(result => {
+        if (result === 'win') win++;
+        if (result === 'lose') lose++;
+      });
+      if (win > lose) { this.finalResult = 'win'; this.wins++ };
+      if (win === lose) { this.finalResult = 'draw'; };
+      if (win < lose) { this.finalResult = 'lose'; this.loses++ };
+    }
   }
 
   // 1 v 1
